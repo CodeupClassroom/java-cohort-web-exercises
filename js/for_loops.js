@@ -48,7 +48,30 @@ function showMultiplicationTable(number){
 // 24 is even
 // 199 is odd
 // ...
-//
+
+//for loop - 10 random numbers [(let i = 1; i <= 10; i++)]
+
+// Generate a random number between 0 and 6
+// let randomNumber = Math.floor(Math.random() * (200 - 20) ) + 20;
+
+//first step - can I log 10 numbers?
+//second step - can I output 10 random numbers?
+//third step - can I filter those 10 random numbers if even?
+//fourth step - can I filter odd numbers?
+
+
+for(let i = 1; i <= 10; i++){
+
+    let randomNumber = Math.floor(Math.random() * (200 - 20) ) + 20;
+
+    if(randomNumber % 2 === 0){
+        console.log("Here's an even number: " + randomNumber);
+    } else {
+        console.log("Here's an odd number: " + randomNumber);
+    }
+
+}
+
 // Create a for loop that uses console.log to create the output shown below.
 //
 // 1
