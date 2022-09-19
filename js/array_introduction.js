@@ -54,5 +54,55 @@ for(let i = 0; i < citiesInTexas.length; i++){
 
 //When we return from lunch: Some NEW LOOP STRUCTURES
 
-//.forEach
+//.forEach - takes in a CALLBACK FUNCTION [function expression or anonymous function in variable] looking for at least what "element" in the internal function we're working with
 
+// someArray.forEach(function(element, index, array) {
+//     // ...
+// })
+
+citiesInTexas.forEach(
+
+    function(city){ //"element" parameter is needed for sure, we name that parameter appropriately. . so for me, it's a CITY from an ARRAY OF CITIES
+
+        console.log("What is the type of this element " + typeof city);
+
+    }
+)
+
+//Do-together: Can you help me write a forEach that would tell me the typeof the elements in 'favoriteNumbers'
+
+let favoriteNumbers = [7, 13, 222]
+
+//Do-together: Can you help me write a forEach that would tell me the typeof the elements in 'favoriteNumbers'
+
+// favoriteNumbers.forEach(function(number){
+//     console.log(typeof number);
+// })
+
+//It would be easier to see the above if we included the index
+
+favoriteNumbers.forEach(function(number, index){
+    console.log("Current index is: " + index + " and the data type was " + typeof number);
+
+})
+
+
+//forOf https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+//for (let element of array1) {
+//   console.log(element);
+// }
+
+for (let city of citiesInTexas){
+    console.log(`Have you ever been to ${city} before?`);
+}
+
+//Broader function idea?
+
+function tellMeAboutCities(array){
+
+    for (let city of array){
+        console.log(`Have you ever been to ${city} before?`);
+    }
+}
+
+let otherCities = ["Milwaukee", "Cape Cod", "San Diego", "Compton", "Charlotte"]
