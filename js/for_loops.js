@@ -132,3 +132,7 @@ for(let i = 1; i < 10; i++){
 // 15
 // 10
 // 5
+
+for(let i = 100; i > 0; i = i - 5){
+    console.log(i);
+}
