@@ -60,17 +60,17 @@ function showMultiplicationTable(number){
 //fourth step - can I filter odd numbers?
 
 
-for(let i = 1; i <= 10; i++){
-
-    let randomNumber = Math.floor(Math.random() * (200 - 20) ) + 20;
-
-    if(randomNumber % 2 === 0){
-        console.log("Here's an even number: " + randomNumber);
-    } else {
-        console.log("Here's an odd number: " + randomNumber);
-    }
-
-}
+// for(let i = 1; i <= 10; i++){
+//
+//     let randomNumber = Math.floor(Math.random() * (200 - 20) ) + 20;
+//
+//     if(randomNumber % 2 === 0){
+//         console.log("Here's an even number: " + randomNumber);
+//     } else {
+//         console.log("Here's an odd number: " + randomNumber);
+//     }
+//
+// }
 
 // Create a for loop that uses console.log to create the output shown below.
 //
@@ -83,6 +83,32 @@ for(let i = 1; i <= 10; i++){
 // 7777777
 // 88888888
 // 999999999
+
+//repeat
+for(let i = 1; i < 10; i++){
+
+    //With repeat, we're practicing our for loop still - we've also seen method/function chaining here thing.method().method().method()
+    console.log(i.toString().repeat(i));
+
+}
+
+
+//nested loop
+
+for(let i = 1; i < 10; i++){
+
+    let str = "";
+
+    for(let j = 0; j < i; j++){
+        str = str + i;
+
+    }
+
+    console.log(str);
+
+}
+
+
 //
 // Create a for loop that uses console.log to create the output shown below.
 //
