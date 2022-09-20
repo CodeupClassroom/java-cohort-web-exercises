@@ -140,8 +140,51 @@ let breakfastFoods = ['breakfast tacos', 'donuts', 'croissants', 'bagels', 'eggi
 
 // ** which returns something else ** //
 
+// var planets = [
+//     'Mercury',
+//     'Venus',
+//     'Earth',
+//     'Mars',
+//     'Jupiter',
+//     'Saturn',
+//     'Uranus',
+//     'Neptune'
+// ];
+// console.log(planets);
+//
+// // console.log('Adding "The Sun" to the beginning of the planets array.');
+// planets.unshift('The Sun');
+// console.log(planets);
+//
+// // console.log('Adding "Pluto" to the end of the planets array.');
+// planets.push('Pluto')
+// console.log(planets);
+//
+// //     console.log('Removing "The Sun" from the beginning of the planets array.');
+// planets.shift()
+// console.log(planets)
+//
+// // console.log('Removing "Pluto" from the end of the planets array.');
+// planets.pop()
+// console.log(planets);
+//
+// // console.log('Finding and logging the index of "Earth" in the planets array.');
+// planets.indexOf("Earth")
+//
+// // console.log("Reversing the order of the planets array.");
+// planets.reverse()
+//
+// planets.sort()
 
+// --------------- PlanetsString
 
+var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
+var planetsArray;
+planetsArray = planetsString.split('|')
+console.log(planetsArray);
+
+console.log(brPlanets);
+let brPlanets = planetsArray.join('<br>')
 
 
 
