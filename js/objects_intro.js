@@ -88,6 +88,14 @@ let airplane = {
 // airplane.crew // what data type? --> array
 
 
+// adding unique id to each passenger object:
+// let uniqueId = 0;
+// airplane.passengers.forEach(function(passenger){
+//
+//     passenger.id = uniqueId++;
+//     console.log(passenger)
+// })
+
 // let airplane = {
 //     model: 777,
 //     brand: 'boeing',
