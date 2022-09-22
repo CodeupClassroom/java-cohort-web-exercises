@@ -39,6 +39,16 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    person.sayHello = function(){
+        //es6 friendly
+        // console.log(`Hello from ${this.firstName} ${this.lastName}!`);
+
+        //string concat friendly
+        console.log("Hello from" + this.firstName + " " + this.lastName);
+    }
+
+    person.sayHello()
+
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
