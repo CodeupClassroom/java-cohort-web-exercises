@@ -195,9 +195,44 @@
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
+     *   part two:
      * - Create a function named `showBookInfo` that accepts a book object and
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(bookTitle, author){
+        let authorName = author.split(" ")
+
+        return {title: bookTitle,
+        author: {
+            firstName: authorName[0],
+            lastName: authorName[1]
+        }}
+    }
+
+    let books2 = [];
+
+    books2.push(createBook("Raise High the Roof Beam, Carpenters", "J.D. Salinger"))
+    books2.push(createBook("A Good Man Is Hard To Find", "Flannery O'Connor"))
+    books2.push(createBook("The Swimmer", "John Cheever"))
+    books2.push(createBook("The Short Happy Life of Francis Macomber", "Ernest Hemingway"))
+    books2.push(createBook("The War of the Worlds", "H.G. Wells"))
+
+    console.log(books2);
+
+    function showBookInfo(arrayOfBooks){
+
+        for(let i = 0; i < arrayOfBooks.length; i++){
+            console.log(`Book # ${i + 1}`);
+            console.log(`Title: ${arrayOfBooks[i].title}`);
+            console.log(`Author: ${arrayOfBooks[i].author.firstName} ${arrayOfBooks[i].author.lastName}`);
+            console.log("- - -");
+        }
+
+    }
+
+    console.log("show book info test ~ ~ ~");
+    showBookInfo((books2))
 
 })();
