@@ -44,7 +44,7 @@
         // console.log(`Hello from ${this.firstName} ${this.lastName}!`);
 
         //string concat friendly
-        console.log("Hello from" + this.firstName + " " + this.lastName);
+        console.log("Hello from " + this.firstName + " " + this.lastName);
     }
 
     person.sayHello()
@@ -63,11 +63,36 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    //write a function - takes in an array
+    // forEach loop is required
+    //IF shoppers.amount is OVER 200 - 12 percent discount
+    //ELSE they pay full price
+    //Our conditional paths need to show - shopper.name, shopper.amount, discount, and adjusted shopper.amount as appropriate
+
+
+    function hebOffer(arrayOfShoppers){
+
+        arrayOfShoppers.forEach(function (shopper){
+
+        if(shopper.amount > 200){
+            console.log(`${shopper.name}, you qualified for our offer! You purchased $${shopper.amount} which earns a 12% discount. Your discount is $${(shopper.amount * .12).toFixed(2)} which gives you a new total $${(shopper.amount - (shopper.amount * .12)).toFixed(2)}`);
+            } else {
+
+            console.log(`${shopper.name} we were running a discount today if you bought over $200 - unfortunately, your total was $${shopper.amount} and you did not qualify. Perhaps you should go get some more items?`);
+
+        }
+
+        })
+
+    }
+
+    hebOffer(shoppers)
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
