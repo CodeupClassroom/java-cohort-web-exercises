@@ -80,19 +80,23 @@
 
         arrayOfShoppers.forEach(function (shopper){
 
-        if(shopper.amount > 200){
-            console.log(`${shopper.name}, you qualified for our offer! You purchased $${shopper.amount} which earns a 12% discount. Your discount is $${(shopper.amount * .12).toFixed(2)} which gives you a new total $${(shopper.amount - (shopper.amount * .12)).toFixed(2)}`);
+            if(shopper.amount > 200){
+
+                console.log(`${shopper.name}, you qualified for our offer! You purchased $${shopper.amount} which earns a 12% discount. Your discount is $${(shopper.amount * .12).toFixed(2)} which gives you a new total $${(shopper.amount - (shopper.amount * .12)).toFixed(2)}`);
+
             } else {
 
-            console.log(`${shopper.name} we were running a discount today if you bought over $200 - unfortunately, your total was $${shopper.amount} and you did not qualify. Perhaps you should go get some more items?`);
+                console.log(`${shopper.name} we were running a discount today if you bought over $200 - unfortunately, your total was $${shopper.amount} and you did not qualify. Perhaps you should go get some more items?`);
 
-        }
+            }
 
         })
 
     }
 
     hebOffer(shoppers)
+
+    console.log("~~~~~~~~~~~");
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -107,6 +111,41 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    let books = [
+        {
+            title: "Franny and Zooey",
+            author: {
+                firstName: "J.D.",
+                lastName: "Salinger"
+            }
+        }, {
+            title: "Armor",
+            author: {
+                firstName: "John",
+                lastName: "Steakley"
+            }
+        }, {
+            title: "The Colour out of Space",
+            author: {
+                firstName: "H.P.",
+                lastName: "Lovecraft"
+            }
+        }, {
+            title: "Principia Discordia",
+            author: {
+                firstName: "Malacalypse",
+                lastName: "the Younger"
+            }
+        }, {
+            title: "Slaughterhouse Five",
+            author: {
+                firstName: "Kurt",
+                lastName: "Vonnegut"
+            }
+        }
+                ]
+
+    console.log(books);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -131,6 +170,24 @@
      *      ---
      *      ...
      */
+
+    for(let i = 0; i < books.length; i++){
+        console.log(`Book # ${i + 1}`);
+        console.log(`Title: ${books[i].title}`);
+        console.log(`Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
+        console.log("- - -");
+    }
+
+    console.log(" - - - for each - - -");
+
+    books.forEach(function (book, index){
+        console.log(`Book # ${index + 1}`);
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        console.log("- - -");
+        }
+
+    )
 
     /**
      * Bonus:
