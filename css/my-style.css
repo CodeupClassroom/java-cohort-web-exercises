@@ -1,0 +1,47 @@
+/*body{*/
+/*    background-color: darkblue;*/
+/*    color: white;*/
+/*}*/
+
+h2 {
+    background-color: black;
+    color: white;
+}
+
+     /*reads everything inside of here as css*/
+
+     /*selectors --> select the element we want to style*/
+ h4 {
+     color: orangered;
+ }
+
+h2 {
+    text-align: right;
+}
+
+/* comment goes here */
+
+h1 {
+    color: hotpink;
+    /* comment goes here */
+    border: 2px dotted black;
+    font-family: Arial;
+}
+
+p {
+    font-size: 24px;
+    border: 4px solid red;
+    color: green;
+    border: 3px dashed orange;
+    font-family: times new roman;
+}
+
+a {
+    border: 2px dotted black;
+}
+
+
+
+
+
+
