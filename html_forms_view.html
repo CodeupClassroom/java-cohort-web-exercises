@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Lecture</title>
+</head>
+<body>
+
+<h3>Get Form</h3>
+<!--Playing with 'get' requests -->
+<form method="get"
+action="https://request-inspector.glitch.me/"
+>
+<!--    //action WHERE DATA IS SENT . . method is HOW the DATA IS SENT-->
+
+<!--    Get request: we saw KEY VALUE pairs in a query string
+
+e.g.; https://url.com/?key=value where the query string is: ?key=value
+
+e.g.; multiple inputs? multiple values in a GET request? we end up with multiple keys. .
+
+https://url.com/?key1=value1&key2=value2&key3=value3 -->
+
+    <label for="email">
+        <input name="email" id="email" type="text" placeholder="email">
+    </label>
+
+    <label for="password">
+        <input name="password" id="password" type="text" placeholder="password">
+    </label>
+
+    <label for="category">
+    <select for="category" name="category" id="category">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+        <option value="freeUser">Freemium User</option>
+    </select></label>
+
+<!--    <label >-->
+<!--        <input  type="text">-->
+<!--    </label>-->
+
+    <button type="submit">
+        Submit information</button>
+
+</form>
+
+<h3>Post Form</h3>
+<form method="POST"
+      action="https://request-inspector.glitch.me/"
+>
+
+    <label for="email2">
+        <input name="email2" id="email2" type="text" placeholder="email">
+    </label>
+
+    <label for="password2"> Password Label   </label>
+        <input name="password2" id="password2" type="password" placeholder="password">
+
+
+    <label for="category2">
+        <select for="category2" name="category2" id="category2">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="freeUser">Freemium User</option>
+        </select>
+    </label>
+
+    <textarea name="body" placeholder="Area of large text"></textarea>
+
+    A <input type="radio" name="quiz_question_1" value="a">
+    B <input type="radio" name="quiz_question_2" value="b">
+    C <input type="radio" name="quiz_question_3" value="c">
+    D <input type="radio" name="quiz_question_4" value="d">
+
+    <button type="submit">
+        Submit information</button>
+
+</form>
+
+</body>
+</html>
