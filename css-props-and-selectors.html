@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" href="../css/css-props-and-selectors.css">-->
-    <link rel="stylesheet" href="css/my-style.css">
+<!--    <link rel="stylesheet" href="css/my-style.css">-->
+
+    <link rel="stylesheet" href="./css/css-props-and-selectors.css">
+
 </head>
 <body>
 <!-- navbar -->
@@ -13,9 +15,6 @@
     <div><a href="#about">About</a></div>
     <div><a href="#contact">Contact Us</a></div>
 </nav>
-
-<!-- header -->
-<header>
 <!--
 1. what element are you changing/styling?
 2. what about the element are we styling/changing (font size, color,
@@ -31,11 +30,49 @@ spacing...)
 // order matters
 -->
 
+<!-- header -->
+<header>
 
     <h1>This is <span>my</span> heading</h1>
-    <p>This is a <span>paragraph</span> describing a bit more about this page and
+    <p id="font-size">This is a <span>paragraph</span> describing a bit
+        more about
+        this page and
         how cool it is!</p>
+
+        <button>click here! </button>
+
+    <p class="blackbg" id="second-paragraph">Lorem ipsum <a>hello
+        world</a>
+    dolor sit
+        amet, consectetur
+        adipisicing elit.</p>
+
+    <ul>
+        <li class="right-align">
+            <p id="one">one</p>
+            <a href="#">one</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At distinctio doloribus dolorum.</p>
+        </li>
+        <li class="right-align">
+            <p>two</p>
+            <a href="#">two</a>
+        </li>
+        <li class="right-align">
+            <p>three</p>
+            <a href="#">three</a>
+        </li>
+
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut blanditiis culpa minima sequi suscipit totam vel?</p>
+
+    <a href="#">another anchor tag inside of header</a>
 </header>
+
+<a href="">free-floating anchor tag</a>
+
+<p>Lorem ipsum dolor <a href="#">strawberry</a> sit amet, consectetur
+    adipisicing elit. Nesciunt,
+    quam.</p>
 
 <!-- main section-->
 <main>
@@ -70,17 +107,17 @@ spacing...)
         <h3>This is a section</h3>
 
         <div>
-            <h4>this is a sub-heading</h4>
+            <h4 class="blackbg">this is a sub-heading</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis itaque laborum quos rem ut! Aliquam aut eaque eveniet in neque omnis praesentium quaerat reprehenderit, temporibus!</p>
         </div>
 
         <div>
-            <h4>this is a sub-heading</h4>
+            <h4 class="green">this is a sub-heading</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis itaque laborum quos rem ut! Aliquam aut eaque eveniet in neque omnis praesentium quaerat reprehenderit, temporibus!</p>
         </div>
 
         <div>
-            <h4>this is a sub-heading</h4>
+            <h4 class="green purple">this is a sub-heading</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis itaque laborum quos rem ut! Aliquam aut eaque eveniet in neque omnis praesentium quaerat reprehenderit, temporibus!</p>
         </div>
     </section>
@@ -90,7 +127,7 @@ spacing...)
         <h3>this is the last section</h3>
         <div>
             <h5>unordered list of cities</h5>
-            <ul>
+            <ul class="center-align">
                 <li>Banff, Canada</li>
                 <li>Cairns, Australia</li>
                 <li>Venic, Italy</li>
@@ -103,12 +140,13 @@ spacing...)
         <div>
             <h5>ordered list of cities</h5>
             <ol>
-                <li>Banff, Canada</li>
-                <li>Cairns, Australia</li>
-                <li>Venic, Italy</li>
-                <li>Cuzco, Peru</li>
-                <li>Chennai, India</li>
-                <li>Krakow, Poland</li>
+                <li class="blackbg center-align">Banff, Canada</li>
+                <li class="center-align">Cairns, Australia</li>
+                <li class="center-align">Venic, Italy</li>
+                <li class="center-align" id="red-font">Cuzco,
+                    Peru</li>
+                <li class="center-align">Chennai, India</li>
+                <li class="center-align">Krakow, Poland</li>
             </ol>
         </div>
     </section>

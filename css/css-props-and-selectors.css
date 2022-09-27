@@ -1,0 +1,97 @@
+/*The Three CSS Questions:
+1. what element are you changing/styling?
+2. what about the element are we styling/changing (font size, color,
+spacing...)
+3. what are we changing (#2) to be?
+*/
+
+/* #id - unique! -> more specific, wins the battle */
+/* .class - not unique - used to group elements together*/
+
+/* specificity wins the battle*/
+/* if specificity isn't the case, then last one wins*/
+
+
+
+/*header p>a {*/
+/*    background-color: orangered;*/
+/*}*/
+
+/*#second-paragraph {*/
+/*    background-color: darkblue;*/
+/*    color: white;*/
+/*}*/
+
+/*#one {*/
+/*    font-size: 36px;*/
+/*}*/
+
+/* .right-align {*/
+/*    text-align: right;*/
+/*}*/
+
+/*span {*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*}*/
+
+/*h4, img {*/
+/*    border: 2px solid green;*/
+/*}*/
+
+/*.blackbg {*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*}*/
+
+
+
+/*#red-font {*/
+/*    color: red;*/
+/*    text-align: left;*/
+/*}*/
+
+
+/*#left-align {*/
+/*    text-align: left;*/
+/*}*/
+
+/*.center-align{*/
+/*    text-align: center;*/
+/*}*/
+
+/*.green {*/
+/*    color: darkgreen;*/
+/*}*/
+
+/*.purple {*/
+/*    color: rebeccapurple;*/
+/*}*/
+
+#font-size {
+    font-size: 36px;
+}
+button {
+    background-color: orangered;
+    color: white;
+    border-radius: 8pt;
+    padding: 16px;
+}
+
+button:hover{
+    background-color: lightpink;
+    color: hotpink;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
