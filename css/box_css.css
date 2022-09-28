@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+
+    border: 1px solid red;
+
+    width: 25%;
+    /*height: 115px;*/
+
+    text-align: center;
+
+}
+
+#boxOne {
+/*    margin-left: 50px;*/
+/*    width: 100px;*/
+
+/*    A few ways to write these properties: */
+   padding: 30px;
+
+/*    padding: 20px 10px 5px 2px;*/
+
+/*    padding-top: 30px;*/
+/*    padding-right: 15px;*/
+/*    padding-bottom: 10px;*/
+/*    padding-left: 5px;*/
+
+/*    Talk about border business*/
+
+    border: 30px solid black;
+    /*border-radius: 100%;*/
+
+
+}
+
+#smallBox {
+    border: 1px solid purple;
+    /* Now we're inheriting HALF of the parent . . */
+    /*The parent was inheriting HALF itself . . so we end up with a QUARTER overall */
+    width: 50%;
+
+/*    Interesting - our DIVs with height set to a percent didn't seem to react . . maybe it needs to be inherited as well? [In english, answer the question 25% of WHAT?]*/
+    height: 75%;
+}
+
+/*.margin-padding {*/
+/*    margin: 20px;*/
+
+/*    padding: 20px;*/
+/*}*/
+
+#boxTwo {
+    margin-top: 60px;
+}
+
+
+
+#widthContainer {
+    margin-top: 20px;
+    width: 75%;
+    background-color: black;
+    color: red;
+
+    /*box-sizing: border-box;*/
+
+}
+
+#width1 {
+    text-align: center;
+    width: 100%;
+    border: 10px solid #0000ff;
+}
