@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+#smile {
+    font-size: 20px;
+}
+
+.flex-container {
+    width: 100%;
+    height: 200px;
+    border: 3px solid goldenrod;
+    display: flex;
+/*    display: flex - default is to be a 'direction' of row*/
+    flex-direction: row;
+/*    justify-content: how do you want to USE the white space / free space of your MAIN axis */
+/*    justify-content: center;*/
+/*    align-items: okay, if there's space on the cross axis, can I spread that or manipulate that? */
+/*    align-items: stretch;*/
+
+
+
+}
+
+#boxOne {
+    /*order: 1*/
+    /*align-self: center;*/
+    flex-grow: 1;
+}
+
+#boxTwo {
+    /*order: -1;*/
+    /*align-self: center;*/
+    flex-grow: 3;
+}
+
+#boxThree {
+    /*order: -2;*/
+    /*align-self: flex-start;*/
+    flex-grow:1;
+}
+.flex-item {
+    background: #BFD45D;
+    border: 2px solid #F9EFD6;
+    padding: 1em;
+}
+
+.flex-container-baseline {
+    display: flex;
+
+    border: 5px solid goldenrod;
+    height: 50vh;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.box1 {
+    font-size: 15px;
+}
+.box2 {
+    font-size: 30px;
+}
+.box3 {
+    font-size: 45px;
+}
+.box4 {
+    font-size: 60px;
+}
+.box5 {
+    font-size: 75px;
+}
+
+.flex-container-wrap{
+    width: 100%;
+    height: 30vh;
+
+    border: 3px solid goldenrod;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+  flex-wrap: wrap;
+/*    TO USE ALIGN CONTENT: must be WRAPPED CONTAINER; why is that important? Default: NOWRAP; NOWRAP  = NO ALIGN CONTENT*/
+    align-content: space-evenly;
+    align-items: flex-end;
+
+}
+
+.flex-container-wrap > div {
+    /*width: 60px;*/
+}
