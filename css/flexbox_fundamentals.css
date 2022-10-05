@@ -30,19 +30,23 @@ body {
 #boxOne {
     /*order: 1*/
     /*align-self: center;*/
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+    /*margin-right: auto;*/
+    margin-left: auto;
 }
 
 #boxTwo {
     /*order: -1;*/
     /*align-self: center;*/
-    flex-grow: 3;
+    /*flex-grow: 3;*/
+    /*margin: 0 auto;*/
 }
 
 #boxThree {
     /*order: -2;*/
     /*align-self: flex-start;*/
-    flex-grow:1;
+    /*flex-grow:1;*/
+    margin-right: auto;
 }
 .flex-item {
     background: #BFD45D;
