@@ -112,7 +112,7 @@ section:nth-of-type(3) h3 {
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -125,6 +125,9 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .grey-box {
