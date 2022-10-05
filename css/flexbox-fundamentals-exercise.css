@@ -48,9 +48,13 @@ section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
+    align-items: center;
+    justify-content: space-between;
+
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    align-self: flex-start;
 }
 
 .purple-box {
