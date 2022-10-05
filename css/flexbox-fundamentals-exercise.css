@@ -81,11 +81,13 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    justify-content: space-around;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-
+    flex-grow: 1;
+    align-self: center;
 }
 
 .orange-circle {
