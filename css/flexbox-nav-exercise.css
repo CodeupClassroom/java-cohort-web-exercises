@@ -1,0 +1,56 @@
+/*TODO: link text, the logo, and icons are surrounded by anchor tags [complete!]*/
+/*TODO: anchor tags are display: inline-block*/
+/*TODO: box-sizing: border-box for all elements*/
+/*TODO: links turn blue on hover*/
+/*TODO: clickable area of links immediately flow from one link to the next (padding will help achieve this)*/
+/*TODO: the "Logo" text is 3em with .2em of padding above and below*/
+/*                              default styling is removed as needed from the body, unordered list and anchor tag elements*/
+/*todo: Google Fonts used for logo and link text ("Montserrat" and "Work Sans", respectively)*/
+/*  no explicit height given to the navbar*//*logo is horizontally centered on the navbar (automatic margins will help achieve this)*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    background-color: darkgray;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+ul > li {
+    list-style-type: none;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+div {
+    font-family: 'Montserrat', sans-serif;
+
+    margin: 0 auto;
+    font-size: 3em;
+    padding: .2em 0;
+}
+
+a {
+    padding: .3em .7em;
+    display: inline-block;
+}
+
+a:hover {
+    color: blue;
+}
+
+
+
+
+
+
+
+
+
