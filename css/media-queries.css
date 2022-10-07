@@ -1,0 +1,101 @@
+#logo {
+    height: 100px;
+}
+
+
+h1 {
+    font-size: 70px;
+    color: #033855;
+}
+
+body {
+    background-color: #F0803C;
+}
+
+#btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    padding: 14px;
+    background-color: antiquewhite;
+    font-size: 18px;
+    border-radius: 4px;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    padding: 8px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 0 8px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+
+/* MEDIA QUERIES*/
+
+/*range of screen widths: in between X and X pixels*/
+@media screen and (min-width: 426px) and (max-width: 850px){
+    body {
+        background-color: teal;
+    }
+}
+
+/* max-width: smaller than X pixels*/
+@media screen and (max-width: 500px){
+    #btn-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        background-color: purple;
+    }
+
+    footer ul li a {
+        font-size: 16px;
+        color: black;
+    }
+
+
+
+    nav ul {
+        padding: 8px;
+        list-style-type: none;
+        flex-direction: column;
+    }
+}
+
+/* screens larger than: X pixels*/
+
+@media screen and (min-width: 500px) {
+    h1 {
+        color: darkred;
+    }
+}
+
+
+
+

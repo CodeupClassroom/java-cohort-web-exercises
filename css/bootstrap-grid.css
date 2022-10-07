@@ -1,0 +1,24 @@
+
+
+.container {
+    border: 2px solid red;
+
+}
+
+.row {
+    border: 3px solid olivedrab;
+    margin: 3px;
+}
+
+.col {
+    background-color: lightcoral;
+    border: 4px solid darkblue;
+}
+
+img {
+    height: 45px;
+}
+
+.col-sm, .col-md, .col-lg{
+    border: 2px solid blueviolet;
+}
