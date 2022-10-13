@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Title</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<h1>List One</h1>
+<ul>
+    <li class="odd list-one-item">List 1, Item 1</li>
+    <li class="even list-one-item">List 1, Item 2</li>
+</ul>
+<h1>List Two</h1>
+<ul>
+    <li class="odd list-two-item">List 2, Item 1</li>
+    <li class="even list-two-item">List 2, Item 2</li>
+</ul>
+
+<p id="paragraphBody">Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit</span>. Ad animi, doloremque enim incidunt magnam officiis optio quod, quos ratione rem repellat sapiente, sed sit? Alias eum itaque quia quisquam voluptates!</p>
+
+    <a href="">My Link</a>
+
+<br>
+<br>
+
+<form name="form">
+    <label for="username">Username</label>
+    <input id="username" name="nameUsername" type="text">
+<br>
+<br>
+<br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+
+</form>
+
+<h1>Data - *</h1>
+<ol>
+    <li id="dbid" data-dbid="1"></li>
+    <li id="data_example" data-example="exampleValue"></li>
+</ol>
+<script>
+let myParagraph = document.getElementById("paragraphBody");
+
+console.log(myParagraph);
+
+let myFirstListItems = document.getElementsByClassName("list-one-item")
+
+console.log(myFirstListItems);
+
+let myListItems = document.getElementsByTagName("li");
+
+console.log(myListItems);
+
+//QuerySelector = go through my DOM and return the first match
+let topListItem = document.querySelector("li")
+
+//QuerySelectorAll = go through my DOM and get all matches
+let allInputs = document.querySelector("input")
+
+//Okay - so I can get node(s) and put them in variables, but why? Now what?
+
+//Access what is there:
+console.log(myParagraph.innerText);
+
+console.log(myParagraph.innerHTML);
+
+//Modifying what is there:
+
+myParagraph.innerHTML = `<h1>hackerman was here</h1><h6>u been hacked</h6></h6>`
+myParagraph.hasAttribute("class")
+
+
+
+//Ways to grab attributes:
+//is it TRUE or FALSE that it has an attribute? [hasAttribute()]
+//go GET the value of the attribute? [getAttribute()]
+//go SET the value of a new or existing attribute [setAttribute()]
+
+console.log(myListItems[0].hasAttribute("class"));
+
+console.log(document.querySelector("a").hasAttribute("href"));
+
+
+console.log(myListItems[0].getAttribute("class"));
+
+
+console.log(myParagraph.setAttribute("class", "paragraph-item"));
+
+console.log(myParagraph.hasAttribute("class"));
+
+console.log(myParagraph.getAttribute("class"));
+
+console.log(myParagraph.setAttribute("class", "highlight"));
+
+//A customizable attribute [data-*]
+//https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
+// It should be noted that in HTML 5, data-* attributes can be added to HTML elements to provide metadata for an element. The * portion of the name must be at least one character long and should be all lower case.
+//Structure:
+// <h1>Data - *</h1>
+// <ol>
+//     <li id="dbid" data-dbid="1"></li>
+//     <li id="data_example" data-example="exampleValue"></li>
+// </ol>
+
+//First example: Our database has ids we can use
+//We want a custom attribute to capture that database_id value and add it to our HTML for our purposes later
+//data-dbid="1" is that example
+
+let liDbId = document.getElementById("dbid")
+
+console.log(liDbId.getAttribute("data-dbid"));
+
+console.log(liDbId);
+
+let otherExample = document.getElementById("data_example")
+
+console.log(otherExample.getAttribute("data-example"));
+
+//Talking to the style properties
+
+</script>
+</body>
+</html>
