@@ -4,47 +4,77 @@
     <meta charset="UTF-8">
     <title>kh Lecture View</title>
     <link rel="stylesheet" href="css/box_css.css">
+    <style>
+        .dramatic {
+            font-weight: bolder;
+            color: darkred;
+        }
+
+        .toggle-size {
+            font-size: 180px;
+        }
+
+        li {
+            background-color: rebeccapurple;
+            color: cornflowerblue;
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
 
-<!--&lt;!&ndash;10/07 kh finished nav feature &ndash;&gt;-->
-<!--<nav>-->
-<!--    <h6>logo</h6>-->
-<!--    <ul> bad typo-->
-<!--        <li>Link here</li>-->
-<!--        <li>Link here</li>-->
-<!--        <li>Link here</li>-->
-<!--        <li>Link here</li>-->
-<!--    </ul>-->
-<!--</nav>-->
+<p>Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit</span>. Accusamus ad adipisci assumenda commodi cum dignissimos, dolor, dolores ducimus esse et hic iste labore laboriosam quis quos repellat suscipit tempore temporibus?</p>
 
-<!--&lt;!&ndash;Header feature below . . and the programming would continue&ndash;&gt;-->
+<ul>
+    <li>List Items</li>
+    <li>List Items</li>
+    <li>List Items</li>
+    <li>List Items</li>
+</ul>
 
-<!--<div class="box margin-padding" id="boxOne">Box One-->
-
-<!--<div id="smallBox">Smaller Box</div>-->
-<!--</div>-->
+<div>Thanks for coming to my website - come back again soon!</div>
 
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-<!--<div class="box margin-padding" id="boxTwo">Box Two</div>-->
+<script>
 
-<!--<div class="box margin-padding" id="boxThree">Box Three</div>-->
+    //.html() - getter and setter :D
+    console.log($("p").html()); //Go GET what is there
 
-<!--<div class="box margin-padding" id="boxFour">Box Four</div>-->
+    $("p").html("<h1>Good morning class, y'all look great!</h1>"); //Go SET a new thing to be what is there
+
+    console.log($("p").html());
+
+    //.css()
+
+    //getting things :D
+    console.log($("li").css("list-style")); //GO GET the style [if found]
+    console.log($("li").css("font-family")); //GO GET the style [if found]
+
+    //setting things
+        //chain chain chain
+    $("li").css("background-color", "red").css("color", "blue");
+
+        //We can use an object too
+
+    let styleObject =   {
+        'color':'green',
+        'background-color':'red',
+    };
+
+    $("p").css(styleObject)
+
+    //.addClass()
+    $("div").addClass("dramatic")
+
+    //.removeClass()
+    $("div").removeClass("dramatic")
+
+    //toggleClass()
+    $("div").toggleClass("toggle-size")
 
 
-<!--<div id="widthContainer">-->
-
-<!--    <div id="width1">Hello World</div>-->
-
-
-
-<!--</div>-->
-
-<!--<script src="js/string_methods_lecture.js"></script>-->
-<!--<script src="js/loops_lecture.js"></script>-->
-<!--<script src="js/array_introduction.js"></script>-->
-<script src="js/bom_and_dom_lecture.js"></script>
+</script>
 </body>
 </html>
