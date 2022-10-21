@@ -23,57 +23,74 @@
 </head>
 <body>
 
-<p>Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit</span>. Accusamus ad adipisci assumenda commodi cum dignissimos, dolor, dolores ducimus esse et hic iste labore laboriosam quis quos repellat suscipit tempore temporibus?</p>
+    <p id="firstParagraph">Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit</span>. Accusamus ad adipisci assumenda commodi cum dignissimos, dolor, dolores ducimus esse et hic iste labore laboriosam quis quos repellat suscipit tempore temporibus?</p>
 
-<ul>
-    <li>List Items</li>
-    <li>List Items</li>
-    <li>List Items</li>
-    <li>List Items</li>
-</ul>
+    <ul>
+        <li id="firstItem">Pedernales Falls</li>
+        <li>Bastrop State Park</li>
+        <li>Government Canyon</li>
+        <li>Grand Canyon National Park</li>
+    </ul>
 
-<div>Thanks for coming to my website - come back again soon!</div>
+    <p>Bocconcini red leicester swiss. Cauliflower cheese monterey jack red leicester babybel cheese slices gouda mozzarella jarlsberg. Cauliflower cheese cheesecake camembert de normandie cheesy grin cheeseburger smelly cheese ricotta pecorino. Smelly cheese.</p>
+
+    <div id="thanksMsg">Thanks for coming to my website - come back again soon!
+
+        <div id="logoDiv">logo here</div>
+
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+<!--<script src="js/jquery_attributes.js"></script>-->
+
 <script>
 
-    //.html() - getter and setter :D
-    console.log($("p").html()); //Go GET what is there
+    //Each - .each(callBackFn(..index, ..ele) {instructions of what to do on matching elements]
+    $("li").each(function(index){
+        console.log("current index:" + index);
+        console.log($(this).html());
 
-    $("p").html("<h1>Good morning class, y'all look great!</h1>"); //Go SET a new thing to be what is there
+        if(index % 2 ===0){
+            $(this).html("Park down the street")
+        }
+    })
 
-    console.log($("p").html());
+    //first;last
 
-    //.css()
+    //.first()
+    $("p").first().css("background-color","black").css("color", "orange")
 
-    //getting things :D
-    console.log($("li").css("list-style")); //GO GET the style [if found]
-    console.log($("li").css("font-family")); //GO GET the style [if found]
+    $("li").first().html("Government Canyon State Park");
 
-    //setting things
-        //chain chain chain
-    $("li").css("background-color", "red").css("color", "blue");
+    //.last()
+    $("p").last().css("background-color", "orange").css("color", "black")
 
-        //We can use an object too
+    //children, parent, parents
 
-    let styleObject =   {
-        'color':'green',
-        'background-color':'red',
-    };
+    console.log($("#thanksMsg").children().html("<h6>logo needs to go here plz</h6>"));
 
-    $("p").css(styleObject)
+    $("ul").children()
 
-    //.addClass()
-    $("div").addClass("dramatic")
+    //Remember: this will do ALLLLLL matching children of the element you start at
+    // $("body").children().html("<h1>haxxor</h1>")
 
-    //.removeClass()
-    $("div").removeClass("dramatic")
+    //parent()
 
-    //toggleClass()
-    $("div").toggleClass("toggle-size")
+    // $("#logoDiv").parent().parent().css("background-color", "red")
 
+    //parents()
+
+    console.log($("#logoDiv").parents());
+
+    //.next()
+
+    $("#firstItem").next().css("background-color", "red")
+
+    console.log($("#firstParagraph").next().html());
+
+    $("#firstParagraph").next().children().css("background-color", "green");
 
 </script>
 </body>
