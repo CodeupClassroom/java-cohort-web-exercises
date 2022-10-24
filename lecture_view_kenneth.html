@@ -4,45 +4,94 @@
     <meta charset="UTF-8">
     <title>kh Lecture View</title>
     <link rel="stylesheet" href="css/box_css.css">
+    <style>
+        .dramatic {
+            font-weight: bolder;
+            color: darkred;
+        }
+
+        .toggle-size {
+            font-size: 180px;
+        }
+
+        li {
+            background-color: rebeccapurple;
+            color: cornflowerblue;
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
 
-<!--10/07 kh finished nav feature -->
-<nav>
-    <h6>logo</h6>
-    <ul> bad typo
-        <li>Link here</li>
-        <li>Link here</li>
-        <li>Link here</li>
-        <li>Link here</li>
+    <p id="firstParagraph">Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit</span>. Accusamus ad adipisci assumenda commodi cum dignissimos, dolor, dolores ducimus esse et hic iste labore laboriosam quis quos repellat suscipit tempore temporibus?</p>
+
+    <ul>
+        <li id="firstItem">Pedernales Falls</li>
+        <li>Bastrop State Park</li>
+        <li>Government Canyon</li>
+        <li>Grand Canyon National Park</li>
     </ul>
-</nav>
+
+    <p>Bocconcini red leicester swiss. Cauliflower cheese monterey jack red leicester babybel cheese slices gouda mozzarella jarlsberg. Cauliflower cheese cheesecake camembert de normandie cheesy grin cheeseburger smelly cheese ricotta pecorino. Smelly cheese.</p>
+
+    <div id="thanksMsg">Thanks for coming to my website - come back again soon!
+
+        <div id="logoDiv">logo here</div>
+
+    </div>
 
 
-<div class="box margin-padding" id="boxOne">Box One
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-<div id="smallBox">Smaller Box</div>
-</div>
+<!--<script src="js/jquery_attributes.js"></script>-->
 
+<script>
 
+    //Each - .each(callBackFn(..index, ..ele) {instructions of what to do on matching elements]
+    $("li").each(function(index){
+        console.log("current index:" + index);
+        console.log($(this).html());
 
-<div class="box margin-padding" id="boxTwo">Box Two</div>
+        if(index % 2 ===0){
+            $(this).html("Park down the street")
+        }
+    })
 
-<div class="box margin-padding" id="boxThree">Box Three</div>
+    //first;last
 
-<div class="box margin-padding" id="boxFour">Box Four</div>
+    //.first()
+    $("p").first().css("background-color","black").css("color", "orange")
 
+    $("li").first().html("Government Canyon State Park");
 
-<div id="widthContainer">
+    //.last()
+    $("p").last().css("background-color", "orange").css("color", "black")
 
-    <div id="width1">Hello World</div>
+    //children, parent, parents
 
+    console.log($("#thanksMsg").children().html("<h6>logo needs to go here plz</h6>"));
 
+    $("ul").children()
 
-</div>
+    //Remember: this will do ALLLLLL matching children of the element you start at
+    // $("body").children().html("<h1>haxxor</h1>")
 
-<!--<script src="js/string_methods_lecture.js"></script>-->
-<!--<script src="js/loops_lecture.js"></script>-->
-<!--<script src="js/array_introduction.js"></script>-->
+    //parent()
+
+    // $("#logoDiv").parent().parent().css("background-color", "red")
+
+    //parents()
+
+    console.log($("#logoDiv").parents());
+
+    //.next()
+
+    $("#firstItem").next().css("background-color", "red")
+
+    console.log($("#firstParagraph").next().html());
+
+    $("#firstParagraph").next().children().css("background-color", "green");
+
+</script>
 </body>
 </html>
