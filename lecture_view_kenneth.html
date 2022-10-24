@@ -3,94 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <title>kh Lecture View</title>
-    <link rel="stylesheet" href="css/box_css.css">
+
     <style>
-        .dramatic {
-            font-weight: bolder;
-            color: darkred;
-        }
 
-        .toggle-size {
-            font-size: 180px;
-        }
-
-        li {
-            background-color: rebeccapurple;
-            color: cornflowerblue;
-            list-style: none;
-        }
     </style>
 </head>
 <body>
 
-    <p id="firstParagraph">Lorem ipsum dolor sit amet, <span>consectetur adipisicing elit</span>. Accusamus ad adipisci assumenda commodi cum dignissimos, dolor, dolores ducimus esse et hic iste labore laboriosam quis quos repellat suscipit tempore temporibus?</p>
+<!--Overview example : using API call-->
+<!--<h1>Want a recipe?</h1>-->
+<!--<button id="genRecipe">Click me</button>-->
 
-    <ul>
-        <li id="firstItem">Pedernales Falls</li>
-        <li>Bastrop State Park</li>
-        <li>Government Canyon</li>
-        <li>Grand Canyon National Park</li>
-    </ul>
+<!--<p id="main"><span id="recipeTitle">I'll be replaced with a recipe when you click above. :)</span>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<span id="recipeBody"></span></p>-->
 
-    <p>Bocconcini red leicester swiss. Cauliflower cheese monterey jack red leicester babybel cheese slices gouda mozzarella jarlsberg. Cauliflower cheese cheesecake camembert de normandie cheesy grin cheeseburger smelly cheese ricotta pecorino. Smelly cheese.</p>
+<!--Requests and Response : taking it to .json file -->
 
-    <div id="thanksMsg">Thanks for coming to my website - come back again soon!
+<h1>Here's some stories I like:</h1>
 
-        <div id="logoDiv">logo here</div>
+<div id="content">
 
-    </div>
+</div>
 
+<h1>Care to add a story?</h1>
+
+<form>
+
+    <label for="title">Title of work:</label>
+    <input type="text" name="title" id="title">
+
+    <br>
+    <label for="author">Author name:</label>
+    <input type="text" name="author" id="author">
+
+    <br>
+    <label for="year">Year published</label>
+    <input type="text" name="year" id="year">
+
+    <button type="button" id="submitNew">Submit</button>
+</form>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 <!--<script src="js/jquery_attributes.js"></script>-->
 
 <script>
+<!--    Overview example : API call -->
+    // $("#genRecipe").click(function(){
+    //
+    //
+    //     $.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data){
+    //
+    //         $("#recipeTitle").text(data.meals[0].strMeal);
+    //
+    //         $("#recipeBody").text(data.meals[0].strInstructions);
+    //
+    //
+    //         console.log(data);
+    //     })
+    //
+    //
+    //
+    // })
 
-    //Each - .each(callBackFn(..index, ..ele) {instructions of what to do on matching elements]
-    $("li").each(function(index){
-        console.log("current index:" + index);
-        console.log($(this).html());
+let innerHTML = "";
 
-        if(index % 2 ===0){
-            $(this).html("Park down the street")
-        }
+//.done - happy path, I finished. . [get, post, etc] to the URL you gave me, and now I'll execute this function
+
+//.fail - unhappy path, I was unable to finish your request
+
+//.always - I will always [happy or unhappy] do these instructions
+
+$.ajax("js/ajax-books.json")
+    .done(function(data, status){
+
+        console.log(status);
+
+        data.forEach(function(book){
+        innerHTML += `<p>${book.title} : by ${book.author}; published in ${book.year}</p>`
     })
 
-    //first;last
+    $("#content").html(innerHTML);
+})
+    .fail(function(status, error){
+        console.log(status);
+        console.log(error);
+    })
+    .always(function(){
+        alert("Request complete - check success or fail in log");
+    })
 
-    //.first()
-    $("p").first().css("background-color","black").css("color", "orange")
 
-    $("li").first().html("Government Canyon State Park");
+$("#submitNew").click(function(){
 
-    //.last()
-    $("p").last().css("background-color", "orange").css("color", "black")
+    var myObj =  {
+        title: $("#title").val(),
+        author: $("#author").val(),
+        year: parseInt($("#year").val())
 
-    //children, parent, parents
+    }
 
-    console.log($("#thanksMsg").children().html("<h6>logo needs to go here plz</h6>"));
-
-    $("ul").children()
-
-    //Remember: this will do ALLLLLL matching children of the element you start at
-    // $("body").children().html("<h1>haxxor</h1>")
-
-    //parent()
-
-    // $("#logoDiv").parent().parent().css("background-color", "red")
-
-    //parents()
-
-    console.log($("#logoDiv").parents());
-
-    //.next()
-
-    $("#firstItem").next().css("background-color", "red")
-
-    console.log($("#firstParagraph").next().html());
-
-    $("#firstParagraph").next().children().css("background-color", "green");
+    $.ajax({
+        url: "https://www.toptal.com/developers/postbin/1666629078713-7818122375756",
+        method: "POST",
+        dataType: "jsonp",
+        data: myObj
+    }).done(function(data, success){
+        console.log(data);
+        console.log(success);
+    })
+})
 
 </script>
 </body>
