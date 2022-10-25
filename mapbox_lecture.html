@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <style>
+        #map{
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+<script>
+    const key = "pk.eyJ1IjoiaG93ZWxsa2VuIiwiYSI6ImNrdWQweGEyNTE2NXAycXFqYmQydGpvNWIifQ.kSpoMnz8_lw5q0dIhJSH_Q";
+
+    mapboxgl.accessToken = key;
+
+    var map = new mapboxgl.Map({
+        container: "map",
+        style: 'mapbox://styles/mapbox/streets-v9',
+        //I do: set zoom and center
+        zoom: 14,
+        center: [-98.64666, 29.51036]
+
+        //TODO: Set your own zoom and center
+
+    });
+
+    //I do: set zoom with map.setZoom
+    //map.setZoom [map.jumpTo? map.flyTo? hmm - better look those up!]
+    //TODO: Set zoom on your own with a map.setZoom call in your console
+
+    //I do: Set a marker on my house
+    let marker = new mapboxgl.Marker()
+        .setLngLat([-98.64666, 29.51036])
+        .addTo(map)
+
+    //TODO: Add your own marker to where we've aligned your map so far
+
+    //I do: set a popup on my house
+    let popup = new mapboxgl.Popup()
+        .setLngLat([-98.64666, 29.51036])
+        .setHTML("<p>Mi casa</p>")
+        .addTo(map)
+
+
+    //TODO: Add your own popup to where your marker is
+
+
+
+    //We do: load in the geocode utils
+    //I do: geocode my parents house
+    geocode("9027 Richmond Hill St.", key).then(function(result){
+        console.log(result)
+
+        let marker2 = new mapboxgl.Marker()
+            .setLngLat(result)
+            .addTo(map)
+
+        let popup2 = new mapboxgl.Popup()
+            .setLngLat(result)
+            .setHTML("<p>Parent's Casa</p>")
+            .addTo(map)
+    })
+
+
+    //TODO: Use the geocode method to add a 2nd marker and popup to your map, then center your map over it
+
+    //I do: Reverse geocode example with Alamo coordinates
+    // reverseGeocode({lng: -98.48616, lat: 29.42598}, key).then(function(result){
+    //     alert(`Here's the address for that coordinate: || ${result}`)
+    // })
+
+    //I do again: [-98.64666, 29.51036]
+    // reverseGeocode({lng: -98.64666, lat: 29.51036}, key).then(function(result){
+    //     alert(`Here's the address for that coordinate: || ${result}`)
+    // })
+
+    //TODO: Try a reverse geocode yourself and see what address you get back for your coordinates - remember to send up a {lng: <lng>, lat: <lat>} object
+
+    //There's lots of alamos
+
+    geocode("The Alamo", key).then(function(result){
+        console.log(result);
+    })
+
+    reverseGeocode({lng: -118.928682, lat: 34.182389}, key).then(function(result){
+        console.log(result);
+    })
+</script>
+</body>
+</html>
