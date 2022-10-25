@@ -79,11 +79,21 @@
     // })
 
     //I do again: [-98.64666, 29.51036]
-    reverseGeocode({lng: -98.64666, lat: 29.51036}, key).then(function(result){
-        alert(`Here's the address for that coordinate: || ${result}`)
-    })
+    // reverseGeocode({lng: -98.64666, lat: 29.51036}, key).then(function(result){
+    //     alert(`Here's the address for that coordinate: || ${result}`)
+    // })
 
     //TODO: Try a reverse geocode yourself and see what address you get back for your coordinates - remember to send up a {lng: <lng>, lat: <lat>} object
+
+    //There's lots of alamos
+
+    geocode("The Alamo", key).then(function(result){
+        console.log(result);
+    })
+
+    reverseGeocode({lng: -118.928682, lat: 34.182389}, key).then(function(result){
+        console.log(result);
+    })
 </script>
 </body>
 </html>
