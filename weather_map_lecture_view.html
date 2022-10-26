@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweater Weather</title>
+</head>
+<body>
+
+<h1>How is your current weather? Where are you? </h1>
+<p>Hint: The more exact your search, the better my results.</p>
+
+<input type="text" id="searchBox" placeholder="Enter a location here">
+<button type="button" id="searchBtn">Search</button>
+
+<div id="current"></div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+
+    //Call without UI pieces:
+    $.ajax("https://api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid=06c64291dac1db4d4d159aac0fab98da").done(function(data){
+        console.log(data);
+    })
+
+    //Putting together some HTML to work with:
+    $("#searchBtn").click(function(e){
+        e.preventDefault();
+        console.log($("#searchBox").val());
+
+        let inputStr = $("#searchBox").val();
+
+        let key = "06c64291dac1db4d4d159aac0fab98da";
+
+
+        $.ajax(`https://api.openweathermap.org/data/2.5/weather?q=${inputStr}&appid=${key}`).done(function(data){
+            console.log(data);
+        })
+    })
+</script>
+</body>
+</html>
