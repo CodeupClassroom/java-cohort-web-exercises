@@ -16,12 +16,25 @@
 
 
 
-
+<script src="js/keys.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
 
     //Call without UI pieces:
-    $.ajax("https://api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid=06c64291dac1db4d4d159aac0fab98da").done(function(data){
+    //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+    console.log(openweatherKey); //"API key" we put after appID
+
+    let myFavoriteVacation = "New Orleans";
+
+    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${myFavoriteVacation}&appid=${openweatherKey}`);
+
+    $.ajax(`https://api.openweathermap.org/data/2.5/weather?q=${myFavoriteVacation}&appid=${openweatherKey}&units=imperial`).done(function(data){
+        console.log(data);
+    })
+
+
+    $.ajax(`https://api.openweathermap.org/data/2.5/forecast?q=${myFavoriteVacation}&appid=${openweatherKey}&units=imperial`).done(function(data){
         console.log(data);
     })
 
