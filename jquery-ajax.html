@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>kh Lecture View</title>
+  <style>
+  </style>
+</head>
+<body>
+<!--Overview example : using API call-->
+<!--<h1>Want a recipe?</h1>-->
+<!--<button id="genRecipe">Click me</button>-->
+<!--<p id="main"><span id="recipeTitle">I'll be replaced with a recipe when you click above. :)</span>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<span id="recipeBody"></span></p>-->
+<!--Requests and Response : taking it to .json file -->
+<h1>Here's some stories I like:</h1>
+
+<div id="content">
+
+</div>
+
+<h1>Care to add a story?</h1>
+
+<form>
+
+  <label for="title">Title of work:</label>
+  <input type="text" name="title" id="title">
+
+  <br>
+  <label for="author">Author name:</label>
+  <input type="text" name="author" id="author">
+
+  <br>
+  <label for="year">Year published</label>
+  <input type="text" name="year" id="year">
+
+  <button type="button" id="submitNew">Submit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<!--<script src="js/jquery_attributes.js"></script>-->
+
+<script>
+  <!--    Overview example : API call -->
+  // $("#genRecipe").click(function(){
+  //
+  //
+  //     $.ajax("https://www.themealdb.com/api/json/v1/1/random.php").done(function(data){
+  //
+  //         $("#recipeTitle").text(data.meals[0].strMeal);
+  //
+  //         $("#recipeBody").text(data.meals[0].strInstructions);
+  //
+  //
+  //         console.log(data);
+  //     })
+  //
+  //
+  //
+  // })
+
+let innerHTML = "";
+
+$.ajax("js/ajax-books.json").done(function(data){
+
+    data.forEach(function(book){
+      innerHTML += `<p>${book.title} : by ${book.author}; published in ${book.year}</p>`
+    })
+
+    $("#content").html(innerHTML);
+})
+
+$("#submitNew").click(function(){
+
+    console.log("sanity");
+    console.log($("#title").val());
+  console.log($("#author").val());
+  console.log($("#year").val());
+
+    var myObj = {
+      "userId": "118",
+      "id": "218",
+      "title": "title",
+      "body":"body"
+    }
+
+    console.log(myObj);
+  $.ajax("https://jsonplaceholder.typicode.com/posts", {
+
+        type: "POST",
+                data: myObj
+}).done(function(data,status){
+
+        console.log("In done method:")
+
+        console.log(data);
+    console.log(status);
+  })
+});
+
+</script>
+</body>
+</html>
