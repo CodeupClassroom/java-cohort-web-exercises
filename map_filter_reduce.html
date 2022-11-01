@@ -6,122 +6,123 @@
 </head>
 <body>
 
-<script>
+<script src="js/map-filter-reduce.js"></script>
+<!--<script>-->
 
-    // ~ Filter ~
+<!--    // ~ Filter ~-->
 
- let myFavNums = [7, 222, 21, 13];
+<!-- let myFavNums = [7, 222, 21, 13];-->
 
- // let myFavoriteEvenNumbers = myFavNums.filter(function(element){
- //     return element % 2 === 0;
- // })
+<!-- // let myFavoriteEvenNumbers = myFavNums.filter(function(element){-->
+<!-- //     return element % 2 === 0;-->
+<!-- // })-->
 
-   let arrowExample = myFavNums.filter((element) => element % 2 === 0)
+<!--   let arrowExample = myFavNums.filter((element) => element % 2 === 0)-->
 
-    console.log(myFavNums);
-    console.log("Only evens plz:");
-    // console.log(myFavoriteEvenNumbers);
-    console.log(arrowExample);
-
-
-    //TODO: Create an array of your favorite numbers or an array of numbers - use filter to see ONLY odd or ONLY even numbers in a new array
-
- let citiesTraveled = [
-     {
-     name: "Houston",
-     state: "Texas"
- },{
-     name: "New York City",
-     state: "New York"
- },{
-     name: "Nashville",
-     state: "Tennessee"
- } ,
-     {
-         name: "Dallas",
-         state: "Texas"
-     }
- ]
-
-    let notTexasCities = citiesTraveled.filter(function(ele){
-        return ele.state.toLowerCase() !== "Texas".toLowerCase();
-    })
-
-    let notTexasCitiesArrow = citiesTraveled.filter(
-        (ele) => ele.state.toLowerCase() !== "Texas".toLowerCase()
-    )
-
-    console.log(citiesTraveled);
-    console.log("How about non-Texas cities?");
-    console.log(notTexasCities);
-    console.log("Arrow function result:");
-    console.log(notTexasCitiesArrow);
-
-    //TODO: Create an array of objects in your environment representing cities you've traveled to or would be interested in traveling to within the United States.
-
-    //TODO: Can you filter that array of objects in an interesting way like I did?
-
- // ~ Map ~
-
- let nums = [2,4,6,8]
-
-let numsPlusOne = nums.map(function(element){
-    return element + 1;
-})
-
-    console.log(nums);
-    console.log("Plus one plz:");
-    console.log(numsPlusOne);
+<!--    console.log(myFavNums);-->
+<!--    console.log("Only evens plz:");-->
+<!--    // console.log(myFavoriteEvenNumbers);-->
+<!--    console.log(arrowExample);-->
 
 
-    //TODO: Create an array of nums - use .map() to change your array of nums by returning an array where each num has been multiplied by 10
+<!--    //TODO: Create an array of your favorite numbers or an array of numbers - use filter to see ONLY odd or ONLY even numbers in a new array-->
 
-    let numsTimesTen = nums.map((e) => e * 10)
+<!-- let citiesTraveled = [-->
+<!--     {-->
+<!--     name: "Houston",-->
+<!--     state: "Texas"-->
+<!-- },{-->
+<!--     name: "New York City",-->
+<!--     state: "New York"-->
+<!-- },{-->
+<!--     name: "Nashville",-->
+<!--     state: "Tennessee"-->
+<!-- } ,-->
+<!--     {-->
+<!--         name: "Dallas",-->
+<!--         state: "Texas"-->
+<!--     }-->
+<!-- ]-->
 
-    console.log(numsTimesTen);
+<!--    let notTexasCities = citiesTraveled.filter(function(ele){-->
+<!--        return ele.state.toLowerCase() !== "Texas".toLowerCase();-->
+<!--    })-->
 
-    let people = [
-     {firstName: "Kenny", lastName: "Howell" },
-     {firstName: "Lola", lastName: "Castillo"},
-     {firstName: "Laura", lastName: "Ruiz"}
- ]
+<!--    let notTexasCitiesArrow = citiesTraveled.filter(-->
+<!--        (ele) => ele.state.toLowerCase() !== "Texas".toLowerCase()-->
+<!--    )-->
 
-    //What if: I want to use map to make a string of the firstName and lastName combined?
+<!--    console.log(citiesTraveled);-->
+<!--    console.log("How about non-Texas cities?");-->
+<!--    console.log(notTexasCities);-->
+<!--    console.log("Arrow function result:");-->
+<!--    console.log(notTexasCitiesArrow);-->
 
-    let namesConcated = people.map(function(element){
-        return element.firstName + " " + element.lastName
-    })
+<!--    //TODO: Create an array of objects in your environment representing cities you've traveled to or would be interested in traveling to within the United States.-->
 
-    console.log(namesConcated);
+<!--    //TODO: Can you filter that array of objects in an interesting way like I did?-->
+
+<!-- // ~ Map ~-->
+
+<!-- let nums = [2,4,6,8]-->
+
+<!--let numsPlusOne = nums.map(function(element){-->
+<!--    return element + 1;-->
+<!--})-->
+
+<!--    console.log(nums);-->
+<!--    console.log("Plus one plz:");-->
+<!--    console.log(numsPlusOne);-->
 
 
-    // ~ Reduce ~
+<!--    //TODO: Create an array of nums - use .map() to change your array of nums by returning an array where each num has been multiplied by 10-->
 
-    let yearSales = [8, 10, 12, 13, 10, 6, 15, 10, 9, 16]
+<!--    let numsTimesTen = nums.map((e) => e * 10)-->
+
+<!--    console.log(numsTimesTen);-->
+
+<!--    let people = [-->
+<!--     {firstName: "Kenny", lastName: "Howell" },-->
+<!--     {firstName: "Lola", lastName: "Castillo"},-->
+<!--     {firstName: "Laura", lastName: "Ruiz"}-->
+<!-- ]-->
+
+<!--    //What if: I want to use map to make a string of the firstName and lastName combined?-->
+
+<!--    let namesConcated = people.map(function(element){-->
+<!--        return element.firstName + " " + element.lastName-->
+<!--    })-->
+
+<!--    console.log(namesConcated);-->
 
 
-    //How many TOTAL SALES do I have from my SALES SO FAR THIS YEAR [yearSales]
+<!--    // ~ Reduce ~-->
 
-    //let bucket = 0;
-    //for (let i = 0; i < yearSales.length; i++){
-    // bucket += yearSales[i];
-    // }
+<!--    let yearSales = [8, 10, 12, 13, 10, 6, 15, 10, 9, 16]-->
 
-    let salesLastYear = 1000;
 
-    let salesToDate = yearSales.reduce(function(total, element){
-        console.log(`The total is currently ${total} and my current element value is ${element}`);
-        return total + element;
-    }, salesLastYear)
+<!--    //How many TOTAL SALES do I have from my SALES SO FAR THIS YEAR [yearSales]-->
 
-    console.log(salesToDate);
+<!--    //let bucket = 0;-->
+<!--    //for (let i = 0; i < yearSales.length; i++){-->
+<!--    // bucket += yearSales[i];-->
+<!--    // }-->
 
-    let experiment = yearSales.reduce((total, element) =>  total + element, -100)
+<!--    let salesLastYear = 1000;-->
 
-    console.log(experiment);
+<!--    let salesToDate = yearSales.reduce(function(total, element){-->
+<!--        console.log(`The total is currently ${total} and my current element value is ${element}`);-->
+<!--        return total + element;-->
+<!--    }, salesLastYear)-->
 
-    //TODO: Create your own array of figures to "reduce" to a single value - sum up a series of numbers like I did, or you can feel free to take your practice in a different direction!
+<!--    console.log(salesToDate);-->
 
-</script>
+<!--    let experiment = yearSales.reduce((total, element) =>  total + element, -100)-->
+
+<!--    console.log(experiment);-->
+
+<!--    //TODO: Create your own array of figures to "reduce" to a single value - sum up a series of numbers like I did, or you can feel free to take your practice in a different direction!-->
+
+<!--</script>-->
 </body>
 </html>
