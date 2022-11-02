@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="content">
+
+</div>
+
+<script>
+
+//Our API: https://www.themealdb.com/api.php
+    const url = 'https://themealdb.com/api/json/v1/1/random.php'
+
+// You've been hired by MockTek to finish out their meal application.
+
+//Our goal is to have a small single page application where the user can roll a random recipe from the API in the variable "url" above.
+
+//TODO: Using a fetch request, utilize the URL above to GET a random meal and look at the result in your console with .log()
+
+fetch(url).then(res => res.json()).then(res => console.log(res.meals[0]))
+
+//TODO: Refine your fetch request - we need properties from the response to get a RECIPE TITLE, RECIPE BODY [instructions], and a RECIPE IMAGE
+
+fetch(url).then(res => res.json()).then(function(res){
+    console.log(res.meals[0].strMeal);
+    console.log(res.meals[0].strInstructions);
+    console.log(res.meals[0].strMealThumb);
+})
+
+//TODO: The last programmers left us a div element in our HTML with an id of 'content' - we should grab that div with JavaScript so we can build some HTML to show our properties of strMeal [recipe title], strInstructions [recipe body], and strMealThumb [url to img] that come back in our response
+
+let myDiv = document.getElementById("content")
+
+//TODO: Let's use JavaScript to build some HTML to put into our DIV - our client would like some cards that show:
+// recipe title [heading of some kind]
+// recipe body [main card body/content]
+// recipe image [bottom of card]
+//TODO: Can you think of some JavaScript that would build HTML in a way that matches their desired card structure? note: pseudocode or rough code would be acceptable to start, but we would want a reasonable looking HTML structure ready for our next step below
+
+// `<div>
+// <h2>${title}</h2>
+// <p>${body}</p>
+// <img src=${source}>
+// </div>`
+
+//TODO: Now that we have an idea of the JavaScript we're using to build a card, we need to get our properties into the HTML from the response - combine the results of a successful FETCH request with our critical three pieces [title, body, image]; your JS building out some HTML above, and populate the div#content (from our HTML page) with a card built with the above combined inside of div#content
+
+fetch(url).then(res => res.json()).then(function(res){
+    myDiv.innerHTML = `<div>
+<h2>${res.meals[0].strMeal}</h2>
+<p>${res.meals[0].strInstructions}</p>
+<img src=${res.meals[0].strMealThumb}>
+</div>`
+})
+
+//TODO Bonus: Add some styling to your efforts - make the card look more like a card, modify the overall size of the image and results to your liking
+
+//TODO Bonus: Now that you're building one card with one result, do you think you could expand your page to showing three different recipes built into three different cards?
+
+</script>
+</body>
+</html>
