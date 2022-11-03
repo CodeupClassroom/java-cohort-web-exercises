@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: auto 0;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+body {
+    background-color: #3A4F41;
+    color: #E1DEE3;
+}
+
+icons {
+     font-variation-settings:
+             'FILL' 0,
+             'wght' 400,
+             'GRAD' 0,
+             'opsz' 48
+ }
+
+header {
+    background-color: #DEC3BE;
+    color: #B9314F;
+    height: 300px;
+}
+
+h1, h2 {
+    text-align: center;
+    padding: 75px 0;
+
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.inner {
+    display: flex;
+    margin: 20px;
+    padding: 55px 25px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
+
+}
+
+h3 {
+    padding-bottom: 20px;
+}
+
+ul li {
+    text-align: left;
+    margin-top: 8px;
+}
+
+
+
+
+
